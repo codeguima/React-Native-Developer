@@ -1,6 +1,8 @@
 # 📱 Curso de React Native - DIO
 
-![Screenshot do app](download.webp)
+<p align="center">
+  <img src="download.webp" alt="Screenshot do app" width="300" />
+</p>
 
 
 Repositório com os conteúdos, exercícios e projetos desenvolvidos durante o curso de **React Native** oferecido pela [DIO.me (Digital Innovation One)](https://dio.me).
