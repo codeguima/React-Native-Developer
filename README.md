@@ -1,7 +1,7 @@
 # 📱 Curso de React Native - DIO
 
 <p align="center">
-  <img src="download.webp" alt="Screenshot do app" width="300" />
+  <img src="download.webp" alt="Screenshot do app" width="150" />
 </p>
 
 
