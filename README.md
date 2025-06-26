@@ -10,127 +10,101 @@
 </table>
 
 
-
-Repositório com os conteúdos, exercícios e projetos desenvolvidos durante o curso de **React Native** oferecido pela [DIO.me (Digital Innovation One)](https://dio.me).
-
-## 🧑‍🏫 Sobre o Curso
-
-O curso aborda os principais conceitos e ferramentas para o desenvolvimento de aplicativos móveis utilizando **React Native**, com foco prático em criação de interfaces, navegação, integração com APIs e gerenciamento de estado.
-
-## 📚 Conteúdo Abordado
-
-- Introdução ao React Native
-- Configuração do ambiente de desenvolvimento
-- Estrutura de um projeto React Native
-- Componentes e Props
-- Estados e Eventos
-- Estilização com StyleSheet
-- Navegação com React Navigation
-- Consumo de APIs com Fetch e Axios
-- Armazenamento local com AsyncStorage
-- Gerenciamento de estado com Context API
-
-## 🛠 Tecnologias Utilizadas
-
-- React Native
-- JavaScript / TypeScript (opcional)
-- Expo CLI / React Native CLI
-- React Navigation
-- Axios
-- AsyncStorage
-
-## 🚀 Projetos Desenvolvidos
-
-1. **App de Green Lantern**
-   - Objetivo: Primeiros passos com componentes e estilização e uso de estados
-
-
-### ▶️ Como Executar
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/codeguima/nome-do-repos.git
-
-Claro! Aqui está um modelo de `README.md` para um repositório de um curso de **React Native** realizado na **DIO (Digital Innovation One)**. Você pode personalizá-lo conforme os detalhes do curso e do seu progresso:
+Repositório com os conteúdos, projetos e desafios desenvolvidos durante o curso **React Native** oferecido pela [DIO.me (Digital Innovation One)](https://dio.me).
 
 ---
 
-````markdown
-# 📱 Curso de React Native - DIO
-
-Repositório com os conteúdos, exercícios e projetos desenvolvidos durante o curso de **React Native** oferecido pela [DIO.me (Digital Innovation One)](https://dio.me).
-
 ## 🧑‍🏫 Sobre o Curso
 
-O curso aborda os principais conceitos e ferramentas para o desenvolvimento de aplicativos móveis utilizando **React Native**, com foco prático em criação de interfaces, navegação, integração com APIs e gerenciamento de estado.
+Este curso oferece uma imersão prática em React Native, capacitando o aluno a construir aplicações móveis híbridas para Android e iOS utilizando as principais ferramentas do ecossistema, como Expo, Hooks, navegação e consumo de APIs.
 
-## 📚 Conteúdo Abordado
+---
+
+## 📚 Conteúdo Programático
+
+### 1. Introdução ao React Native
 
 - Introdução ao React Native
 - Configuração do ambiente de desenvolvimento
-- Estrutura de um projeto React Native
-- Componentes e Props
-- Estados e Eventos
-- Estilização com StyleSheet
-- Navegação com React Navigation
-- Consumo de APIs com Fetch e Axios
-- Armazenamento local com AsyncStorage
-- Gerenciamento de estado com Context API
+- Primeiros passos com React Native & Expo
+- Projeto: Sequenciador de senhas do Batman
 
-## 🛠 Tecnologias Utilizadas
+### 2. Fundamentos de Apps React Native
 
-- React Native
-- JavaScript / TypeScript (opcional)
-- Expo CLI / React Native CLI
-- React Navigation
-- Axios
-- AsyncStorage
+- Componentes no React Native
+- Flexbox e responsividade
+- Gerenciamento de eventos
+- Desafio: Recrie um app de Bat Sinal
 
-## 🚀 Projetos Desenvolvidos
+### 3. Primeiros Desafios de Código Básicos em JavaScript
 
-1. **App de Boas-Vindas**
-   - Objetivo: Primeiros passos com componentes e estilização
+- Registro de usuário
+- Gerenciamento de tarefas
+- Soma de números pares em intervalo
 
-2. **ToDo List**
-   - Objetivo: Trabalhar com estados, eventos e listas
+### 4. Navegabilidade no React Native
 
-3. **App de Filmes**
-   - Objetivo: Integração com API externa e navegação entre telas
+- Uso de Hooks
+- Navegação com React Navigation (Stack, Tab, Drawer)
+- Projeto: App de Portfólio
 
-4. **App de Login**
-   - Objetivo: Interface com validação e armazenamento de token
+### 5. Explorando Desafios de Código Intermediários em JavaScript
 
-## ▶️ Como Executar
+- Catálogo de jogos
+- Criando seu personagem
+- Cálculo de pegada de carbono
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
-````
+### 6. Gerenciando Componentes React Native
 
-2. Acesse a pasta do projeto:
+- Casos de uso com Hooks
+- Context API
+- Consumo de APIs em apps React Native
+- Deploy com EAS
 
-   ```bash
-   cd nome-do-repositorio
-   ```
+### 7. Continuando Sua Jornada com Desafios Intermediários em JavaScript
 
-3. Instale as dependências:
+- Substituição de jogadores
+- Lista de itens
+- Calculando o dano
 
-   ```bash
-   npm install
-   # ou
-   yarn install
-   ```
+### 8. Manipulando a Câmera em Apps React Native com Expo
 
-4. Inicie o projeto:
+- Propriedades essenciais da câmera
+- Captura e permissões
+- Biblioteca de mídia
+- Captura de vídeo
 
-   ```bash
-   npm start
-   # ou
-   yarn start
-   ```
+### 9. Desafios de Código Avançados em JavaScript
+
+- Gerenciamento de usuários
+- Criando um jogador de futebol
+- Validação da força de senhas
+
+---
+
+## 🚀 Projetos e Desafios
+
+Aqui estão alguns dos principais projetos desenvolvidos durante o curso:
+
+| Projeto | Descrição |
+|---------|-----------|
+| Sequenciador de Senhas do Batman | Exercício inicial para praticar componentes e estados |
+| App Bat Sinal | Projeto desafio focado em UI e navegação |
+| App de Portfólio | App completo com navegação entre telas |
+| Simuladores e Desafios JS | Diversos exercícios para reforçar lógica e manipulação de dados |
+| App de Câmera Expo | Uso avançado de recursos de hardware e permissões |
+
+---
+
+## ▶️ Como Rodar os Projetos
+
+1. Clone este repositório:
+
+```bash
+git clone https://github.com/codeguima/React-Native-Developer.git
 
 > 💡 Requer o ambiente do [Expo](https://expo.dev/) instalado, ou o uso do emulador Android/iOS.
-
+```
 ## 👨‍💻 Autor
 
 Feito por **\[Jhonny Guimarães]**
