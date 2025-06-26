@@ -1,7 +1,14 @@
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <h1>📱 Curso de React Native - DIO</h1>
-  <img src="download.webp" alt="Logo React Native" width="100" />
-</div>
+<table>
+  <tr>
+    <td>
+      <h1>📱 Curso de React Native - DIO</h1>
+    </td>
+    <td align="right">
+      <img src="download.webp" alt="Logo React Native" width="100"/>
+    </td>
+  </tr>
+</table>
+
 
 
 Repositório com os conteúdos, exercícios e projetos desenvolvidos durante o curso de **React Native** oferecido pela [DIO.me (Digital Innovation One)](https://dio.me).
