@@ -17,7 +17,7 @@ export function HomeScreen({ navigation} : any) {
         title='Go To Gallery'
         onPress={navToGallery}
       />
-        <StatusBar style='light'/>
+        <StatusBar style='dark'/>
     </View>
   );
 }
