@@ -159,5 +159,3 @@ Para ícones mais modernos e variados, use MaterialCommunityIcons.
 Para um visual mais clássico e elegante, FontAwesome também é uma excelente escolha.
 
 Pronto! Agora você tem uma base sólida para criar apps com navegação eficiente e visual profissional! 🚀
-
--
