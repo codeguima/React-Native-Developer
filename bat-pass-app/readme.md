@@ -91,7 +91,7 @@ bat-pass-app/
 1️⃣ Clone o repositório:
 
 ```bash
-git clone https://github.com/seuusuario/bat-pass-app.git
+git clone https://github.com/codeguima/bat-pass-app.git
 ````
 
 2️⃣ Acesse a pasta:
@@ -139,5 +139,5 @@ Sinta-se livre para utilizar o código para aprendizado e evolução pessoal.
 
 🦇 Feito com disciplina para treinar **React Native** e **lógica de programação prática.**
 
-```
+
 
