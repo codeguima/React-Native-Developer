@@ -91,7 +91,7 @@ bat-pass-app/
 1️⃣ Clone o repositório:
 
 ```bash
-git clone https://github.com/seuusuario/bat-pass-app.git
+git clone https://github.com/codeguima/bat-pass-app.git
 ````
 
 2️⃣ Acesse a pasta:
