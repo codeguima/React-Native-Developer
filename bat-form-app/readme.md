@@ -107,7 +107,7 @@ bat-form-app/
 1️⃣ Clone o repositório:
 
 ```bash
-git clone https://github.com/seuusuario/bat-form-app.git
+git clone https://github.com/codeguima/bat-form-app.git
 ````
 
 2️⃣ Acesse a pasta:
