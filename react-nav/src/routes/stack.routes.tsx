@@ -12,10 +12,20 @@ export function StackRoutes(){
             <Screen
                 name='home'
                 component={HomeScreen}
+                options={{
+                    title: 'Inicio',
+                    headerTintColor:'green',
+                    headerShown: true // para aparecer ou não o nome a tela
+                }}
             />
             <Screen
                 name='gallery'
                 component={GalleryScreen}
+                options={{
+                    title: 'Galeria',
+                    headerTintColor:'green',
+                    headerShown: true // para aparecer ou não o nome a tela
+                }}
             />
         </Navigator>
     )
