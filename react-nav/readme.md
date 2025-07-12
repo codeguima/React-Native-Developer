@@ -7,3 +7,6 @@ Documantação: https://reactnavigation.org/docs
 
 # INSTALAR LIB DE NAVEGAÇÃO APÓ INTALAÇÃO DO CORE
 npx expo install react-native-screens react-native-safe-area-context
+
+# INSTALAR METODO DE NAVEGAÇÃO STACK(PILHA)
+npm install @react-navigation/stack

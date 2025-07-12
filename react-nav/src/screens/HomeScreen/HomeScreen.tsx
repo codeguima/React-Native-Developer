@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 import { styles } from './HomeScreenStyle';
 
-export function HomeScreens() {
+export function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text>Hello HomeScreen</Text>
