@@ -23,6 +23,9 @@ Este projeto contém:
 ### Tela de Skills
 ![Tela Skills](./assets/pictures/2.jpg)
 
+<p align="center">
+  <img src="./assets/pictures/2.jpg" width="300" />
+</p>
 
 ---
 
