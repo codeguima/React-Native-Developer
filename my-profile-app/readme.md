@@ -18,14 +18,11 @@ Este projeto contém:
 ## 📱 Screenshots
 
 ### Tela Principal
-![Tela Principal](./assets/pictures/1.jpg)
+![Tela Principal](https://github.com/codeguima/React-Native-Developer/blob/main/my-profile-app/assets/pictures/1.jpg)
 
 ### Tela de Skills
-![Tela Skills](./assets/pictures/2.jpg)
+![Tela Skills](https://github.com/codeguima/React-Native-Developer/blob/main/my-profile-app/assets/pictures/2.jpg)
 
-<p align="center">
-  <img src="./assets/pictures/2.jpg" width="300" />
-</p>
 
 ---
 
