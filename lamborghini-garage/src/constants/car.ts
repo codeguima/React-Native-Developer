@@ -1,1 +1,2 @@
-export const CAR_ASSETS_BASE_URLS = "https://digitalinnovationone.github.io/fake-data-api-lamborghini/assets/"
+export const CAR_API_BASE_URL = "https://digitalinnovationone.github.io/fake-data-api-lamborghini/api/lamborghini.json";
+export const CAR_IMAGE_BASE_URL = "https://digitalinnovationone.github.io/fake-data-api-lamborghini/assets/";
