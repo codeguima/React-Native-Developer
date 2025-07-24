@@ -27,7 +27,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <CameraView style={styles.camera} facing={facing}>
+      <CameraView style={styles.camera} facing={facing} ratio='4:3'>
         <View style={styles.mainView}>
           <TouchableOpacity style={styles.flipArea} onPress={toggleCameraFacing}>
             <Text style={styles.flipText}>Flip Camera</Text>
