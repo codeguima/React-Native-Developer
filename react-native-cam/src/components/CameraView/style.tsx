@@ -32,6 +32,8 @@ export const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     padding: 20,
     borderRadius: 50,
+    marginVertical:40,
+
   },
   takeTextPhoto: {
     color: 'white',
