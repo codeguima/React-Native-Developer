@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, Modal, Image } from "react-native";
 import { CameraView } from "expo-camera"; // Importando o CameraView corretamente
 import { styles } from "./style";
 import CameraViewProps from "./props";
+import * as MediaLibrary from 'expo-media-library';
+
 
 export default function CustomCameraView({ type, onFlipCamera }: CameraViewProps) {
   const camRef = useRef<CameraView>(null);
@@ -19,6 +21,16 @@ export default function CustomCameraView({ type, onFlipCamera }: CameraViewProps
       console.log("Câmera não está disponível!");
     }
   }
+
+  async function savePicture(){
+    if(capturedPhoto != null){
+      MediaLibrary.saveToLibraryAsync(capturedPhoto).then(() =>{
+        setCapturedPhoto(null);
+      });
+    }
+    
+  }
+
 
   return (
     <View style={styles.container}>
@@ -41,9 +53,14 @@ export default function CustomCameraView({ type, onFlipCamera }: CameraViewProps
       {capturedPhoto && (
         <Modal animationType="slide" transparent={false} visible={modalIsOpen}>
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', margin: 20 }}>
+            <View style={{margin:10}}>
             <TouchableOpacity style={{ margin: 10 }} onPress={() => setModalIsOpen(false)}>
               <Text style={{fontSize:20}}>Close</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={{ margin: 10 }} onPress={savePicture}>
+              <Text style={{fontSize:20}}>Save</Text>
+            </TouchableOpacity>
+            </View>
             <Image
               style={{ width: '100%', height: 300, borderRadius: 20 }}
               source={{ uri: capturedPhoto }}

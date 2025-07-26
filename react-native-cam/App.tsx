@@ -2,17 +2,25 @@ import { Camera, CameraType, useCameraPermissions } from 'expo-camera';
 import { useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import CustomCameraView from './src/components/CameraView';
+import * as MediaLibrary from 'expo-media-library';
+
 
 export default function App() {
   const [type, setType] = useState<CameraType>('back');
   const [permission, requestPermission] = useCameraPermissions();
-  const [hasPermission, setHasPermission] = useState<boolean>(false);
+  const [hasCameraPermission, setHasCameraPermission] = useState<boolean>(false);
+  const [hasMediaPermission, setMediaPermission] = useState<boolean>(false);
 
   useEffect(()=>{
     (async () =>{
       const {status} = await Camera.requestCameraPermissionsAsync();
       console.log(status);
-      setHasPermission(status === 'granted');
+      setHasCameraPermission(status === 'granted');
+    })();
+
+    (async () =>{
+      const {} = await MediaLibrary.requestPermissionsAsync();
+      setMediaPermission(status ==='granted');
     })();
   },[]);
 
@@ -22,7 +30,9 @@ export default function App() {
   }
 
 
-  if (!hasPermission) return <View />;
+  if (hasCameraPermission === null) return <View><Text>Não tem permissão de Camera.</Text></View>;
+  if (hasMediaPermission === null) return <View><Text>Não tem permissão de mídia.</Text></View>;
+
 
   if (!permission?.granted) {
     return (
