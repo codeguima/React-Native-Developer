@@ -1,9 +1,8 @@
 import { CameraView } from "expo-camera";
 
 export interface CameraViewProps {
-  cameraRef: React.RefObject<CameraView | null>;
+  cameraRef: React.RefObject<CameraView>;
   isRecording: boolean;
-  onRecording: () => void;
+  onRecord: () => void;
   onStopRecording: () => void;
-  onCameraReady: () => void;
 }

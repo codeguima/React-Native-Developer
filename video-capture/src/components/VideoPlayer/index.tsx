@@ -1,25 +1,17 @@
-import React from 'react';
-import { Button, SafeAreaView, View, Text } from 'react-native';
-import { Video } from 'expo-av';
-import { styles } from './style';
-import { VideoPlayerProps } from './props';
+import React from "react";
+import { Text, SafeAreaView, View, Button } from "react-native";
 
-export function VideoPlayer({
+import { Audio, Video } from "expo-av";
+
+import { VideoPlayerProps } from "./props";
+import { styles } from "./style";
+
+export default function VideoPlayer({
   video,
   onShare,
   onSave,
   onDiscard,
 }: VideoPlayerProps) {
-  if (!video?.uri) {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Text style={{ textAlign: 'center', marginTop: 20 }}>
-          Nenhum vídeo disponível.
-        </Text>
-      </SafeAreaView>
-    );
-  }
-
   return (
     <SafeAreaView style={styles.container}>
       <Video
@@ -28,11 +20,10 @@ export function VideoPlayer({
         useNativeControls
         isLooping
       />
-
       <View style={styles.menuButtons}>
-        <Button title="📤 Share" onPress={onShare} />
-        <Button title="💾 Save" onPress={onSave} />
-        <Button title="🗑️ Discard" onPress={onDiscard} />
+        <Button title="Share" onPress={onShare} />
+        <Button title="Save" onPress={onSave} />
+        <Button title="Discard" onPress={onDiscard} />
       </View>
     </SafeAreaView>
   );
