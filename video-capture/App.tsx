@@ -1,103 +1,108 @@
-import { useEffect, useState, useRef } from 'react';
-import { Alert, StyleSheet, Text, View } from 'react-native';
-
-import { StatusBar } from 'expo-status-bar';
+import { useEffect, useRef, useState } from 'react';
+import { Alert } from 'react-native';
 import { Camera, CameraRecordingOptions, CameraView } from 'expo-camera';
-import { Video } from 'expo-av';
 import { shareAsync } from 'expo-sharing';
 import * as MediaLibrary from 'expo-media-library';
 
 import CustomCameraView from './src/components/CameraView';
 import { VideoPlayer } from './src/components/VideoPlayer';
 
-
 export default function App() {
-  const cameraRef = useRef<CameraView>(null);
-  const [ isRecording, setIsRecording ] =  useState(false);
-  const [video, setVideo] = useState<any>();
+  const cameraRef = useRef<CameraView | null>(null);
 
+  const [isRecording, setIsRecording] = useState(false);
+  const [video, setVideo] = useState<any>();
+  const [isCameraReady, setIsCameraReady] = useState(false);
 
   const [hasCameraPermission, setHasCameraPermission] = useState(false);
-  const [hasMicrophonePermission, setHasMicrofonePermission] = useState(false);
+  const [hasMicrophonePermission, setHasMicrophonePermission] = useState(false);
   const [hasMediaLibraryPermission, setHasMediaLibraryPermission] = useState(false);
-  
-  useEffect(() =>{
-    (async() => {
+
+  useEffect(() => {
+    (async () => {
       const cameraPermission = await Camera.requestCameraPermissionsAsync();
-      const microphonePermission = await Camera.getMicrophonePermissionsAsync();
-      const mediaLibraryPermission = await MediaLibrary.requestPermissionsAsync();
+      const micPermission = await Camera.requestMicrophonePermissionsAsync();
+      const mediaPermission = await MediaLibrary.requestPermissionsAsync();
 
       setHasCameraPermission(cameraPermission.status === 'granted');
-      setHasMicrofonePermission(microphonePermission.status === 'granted');
-      setHasMediaLibraryPermission(mediaLibraryPermission.status === 'granted')
+      setHasMicrophonePermission(micPermission.status === 'granted');
+      setHasMediaLibraryPermission(mediaPermission.status === 'granted');
     })();
-  },[]);
+  }, []);
 
-  if(hasCameraPermission === undefined || hasMicrophonePermission === false){
-    return Alert.alert("Não tem permissão de camera ou audio!");
-  }
-  if(hasMediaLibraryPermission === false){
-    return Alert.alert("Não tem acesso a biblioteca!");
+  if (!hasCameraPermission || !hasMicrophonePermission) {
+    Alert.alert('Erro', 'Sem permissão para usar a câmera ou o microfone.');
+    return null;
   }
 
-  const recordVideo =() =>{
+  if (!hasMediaLibraryPermission) {
+    Alert.alert('Erro', 'Sem permissão para acessar a galeria.');
+    return null;
+  }
+
+  const recordVideo = async () => {
+  if (!cameraRef.current || isRecording || !isCameraReady) return;
+
+  try {
     setIsRecording(true);
 
-    const options : CameraRecordingOptions ={
-      maxDuration:60,
+    const options: CameraRecordingOptions = {
+      maxDuration: 60,
     };
 
-    if(cameraRef && cameraRef.current){
-      cameraRef.current?.recordAsync(options).then((recordedVideo : any) => {
-        setVideo(recordVideo);
-        setIsRecording(false);
-      });
-    }  
-  }
+    const recordedVideo = await cameraRef.current.recordAsync(options);
 
-  const stopRecordVideo =() =>{
+    setVideo(recordedVideo);
+  } catch (error) {
+    console.error('Erro ao gravar vídeo:', error);
+  } finally {
     setIsRecording(false);
-    if(cameraRef && cameraRef.current){
-      cameraRef.current.stopRecording();
-    }
   }
+};
 
-  if(video){
-    const shareVideo = () =>{
-      
+const stopRecordVideo = () => {
+  if (cameraRef.current) {
+    cameraRef.current.stopRecording(); // só aqui!
+  }
+};
+
+
+  const handleShare = async () => {
+    if (video) {
+      await shareAsync(video.uri);
+      setVideo(undefined);
     }
+  };
 
-    const saveVideo = () =>{
-      
+  const handleSave = async () => {
+    if (video) {
+      await MediaLibrary.saveToLibraryAsync(video.uri);
+      setVideo(undefined);
     }
+  };
 
+  const handleDiscard = () => {
+    setVideo(undefined);
+  };
+
+  if (video) {
     return (
-      <VideoPlayer 
+      <VideoPlayer
         video={video}
-        onShare={shareVideo}
-        onSave={saveVideo}
-        onDiscard={() => setVideo(undefined)}
+        onShare={handleShare}
+        onSave={handleSave}
+        onDiscard={handleDiscard}
       />
-  );
+    );
   }
 
   return (
-    <CustomCameraView 
-      cameraRef={cameraRef} 
+    <CustomCameraView
+      cameraRef={cameraRef}
       isRecording={isRecording}
-      onRecording={onRecording}
-      onStopRecording={onStopRecording}
-    >
-      
-    </CustomCameraView>
+      onRecording={recordVideo}
+      onStopRecording={stopRecordVideo}
+      onCameraReady={() => setIsCameraReady(true)}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
