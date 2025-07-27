@@ -1,14 +1,30 @@
 import React from 'react';
-import { View } from 'react-native';
-import { VideoProps } from 'expo-av';
+import { Button, SafeAreaView, View } from 'react-native';
+import { Video, VideoProps } from 'expo-av';
 import { styles } from './style';
 import { Text } from 'react-native';
+import { VideoPlayerProps } from './props';
 
 
-export function VideoPlayer() {
+export function VideoPlayer({
+  video,
+    onShare,
+    onSave,
+    onDiscard,
+} : VideoPlayerProps) {
   return (
-    <View style={styles.container}>
-      <Text>VideoPlayer is Up!</Text>
-    </View>
+    <SafeAreaView style={styles.container} >
+      <Video
+        style={styles.video} 
+        source={{uri:video.uri}}
+        useNativeControls
+        isLooping
+      />
+      <View style={styles.menuButtons} >
+        <Button title='Share' onPress={onShare} />
+        <Button title='Save' onPress={onSave} />
+        <Button title='Discard' onPress={onDiscard} />
+      </View>
+    </SafeAreaView>
   );
 }
