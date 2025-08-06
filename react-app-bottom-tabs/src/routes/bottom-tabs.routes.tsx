@@ -38,6 +38,7 @@ export function BottomTabsRoutes(){
                     title:'Galeria'
                 }}
             />
+            
         </Navigator>
     )
 }
